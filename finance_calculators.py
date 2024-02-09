@@ -12,16 +12,36 @@ greeting = greeting.lower()
 # ask the user to input all the relevant information
 if greeting == "investment":
     
-    money = int(input("Please enter the amount you would like to deposit:\n"))
-    interest_rate = float(input("Please enter your interest rate as percentage (Example: 20):\n"))
-    number_of_years = int(input("Please enter number of years you plan on investing:\n"))
+    money = input("Please enter the amount you would like to deposit:\n")
+    try: 
+        money = int(money)
+    except ValueError:
+        print(f"Invalid value! Exiting.")
+        quit() 
+
+    interest_rate = input("Please enter your interest rate as percentage (Example: 20):\n")
+    try: 
+        interest_rate = float(interest_rate)
+    except ValueError:
+        print(f"Invalid value! Exiting.")
+        quit()
+
+    number_of_years = input("Please enter number of years you plan on investing:\n")
+    try: 
+        number_of_years = int(number_of_years)
+    except ValueError:
+        print(f"Invalid value! Exiting.")
+        quit() 
+
     interest_type = input("Please choose if you would like simple or compound interest (enter 'simple' or 'compound'):\n")
+
     interest_type = interest_type.lower()    
 
 #ask the user to choose between 'simple' or 'compoud' options
 
     # calculate simple interest
-    
+
+   
     if interest_type == "simple":
         interest_rate = interest_rate / 100
         simple_interest = money *(1 + interest_rate * number_of_years)
@@ -42,9 +62,27 @@ elif greeting == "bond":
 
     # ask the user to input all the relevant information
     
-    house_value = int(input("Please enter the value of the house:\n"))
-    interest_rate = float(input("Please enter your interest rate as percentage (Example: 20):\n"))
-    number_of_months = int(input("Please enter the number of months to repay the bond:\n"))
+    house_value = input("Please enter the value of the house:\n")
+    try: 
+        house_value = int(house_value)
+    except ValueError:
+        print(f"Invalid value! Exiting.")
+        quit()
+
+    interest_rate = input("Please enter your interest rate as percentage (Example: 20):\n")
+    try: 
+        interest_rate = float(interest_rate)
+    except ValueError:
+        print(f"Invalid value! Exiting.")
+        quit()
+
+    number_of_months = input("Please enter the number of months to repay the bond:\n")
+    try: 
+        number_of_months = int(number_of_months)
+    except ValueError:
+        print(f"Invalid value! Exiting.")
+        quit()
+
 
     monthly_rate = (interest_rate/100)/12
 
